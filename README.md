@@ -19,4 +19,14 @@ https://rastating.github.io/bludit-brute-force-mitigation-bypass/
 This script automate the backup from Elasticsearch taking vantage of the following tool:
 https://github.com/elasticsearch-dump/elasticsearch-dump
 
+### reverse_shell
+This script get a reverse shell from windows and linux OS. 
+You can use this script in combination with Netcat to receive the reverse shell.
 
+To make a Windows OS or Linux OS executable, you can use pyinstaller 
+
+Example:
+
+pip install pyinstaller
+
+pyinstaller.exe .\reverse_tcp.py --onefile --windowed 
