@@ -3,8 +3,8 @@ import os
 import subprocess
 
 
-host = "127.0.0.1" # change me
-port = 80 # change me if you want or need
+host = "127.0.0.1"  # change me
+port = 80  # change me if you want or need
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((host, port))
