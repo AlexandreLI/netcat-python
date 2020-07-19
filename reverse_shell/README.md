@@ -1,5 +1,5 @@
 ## Reverse TCP shell
-This script get a reverse shell from windows and linux OS. You can use this script in combination with Netcat to receive the reverse shell.
+This script get a reverse shell from windows and linux OS. You can use this script in combining with Netcat to receive the reverse shell.
 
 ### Requirements
 Python version 3 or later. 
